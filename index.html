@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first web page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+    textarea {
+overflow-y: scroll;
+height: 100px;
+resize: none;
+}
+label{
+    padding: 5px;
+}
+</style>
+<body>
+    <div class="titleone"> <h1>My First Web Page</h1></div>
+    <div class="titleonered"> hiiiiiiiiiiiiiiiiiiiiiiiiiii</div>
+     <div class="titletwo"> <h1> What is this:</h1></p><p></p></div>
+    <p>welcome to <i> my first web page</i>. I created this web page using text editor . little text editor and <b>keen understanding of text html.</b></p>
+    <div class="titletwo"><p><h1> Why is this:</h1></p></div>
+    <ul style="color:rgb(241, 85, 85)">
+        <li>To learn HTML</li>
+        <li>List Element</li>
+        <ol>
+            <li>Home</li>
+            <li>FAQ</li>
+            <li>ontact</li>
+            <li>About</li>
+        </ol>
+        <li>Here I have created ordered and unordered list.</li>
+    </ul>
+    <div class="titletwo"><p> <h1> ZeusLearning.com</h1></p></div>
+    <P><a href="https://zeuslearning.com" target="_blank">This link will open zeuslearning.com in new tab</a></P>
+    <div class="titletwo"><p> <h1> On the click of the following image navigate to Google.com</h1></p></div><br>
+    <img src="https://storage.googleapis.com/gd-prod/images/f4f4bc5f-904a-4b61-972f-c403bc060679.60c498c559810aa0.webp" alt="google.com" width="400" height="200" onclick="window.location.href='https://www.google.com';" style="cursor: pointer;border-style: dotted;">
+    <p><h3 style="color: rgb(189, 189, 189);">some random table</h3></p>
+    <table border="1" style="background-color: rgb(189, 189, 189);">
+        
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+            <td>Row 1, Cell 3</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+            <td>Row 2, Cell 3</td>
+        </tr>
+         <tr>
+            <td>Row 3, Cell 1</td>
+            <td>Row 3, Cell 2</td>
+            <td>Row 3, Cell 3</td>
+        </tr>
+         <tr>
+            <td>Row 4, Cell 1</td>
+            <td>Row 4, Cell 2</td>
+            <td>Row 4, Cell 3</td>
+        </tr>
+        </table>
+    <p><h3 style="color: rgb(189, 189, 189);">some random form</h3></p>
+    <!-- <form action="https://example.com/submit" method="post">
+        <span><b>Note : </b>This looks the part but doesnt do anything</span>
+            <p>Name:</p>
+        <input type="text" name="name" placeholder="Enter your name" required><br>
+         <p><label for="message">comments:</label></p>
+  <textarea id="message" name="message" rows="4" cols="50" placeholder="Type your message here..."  required></textarea>
+   <p>Are you:</p>
+  <input type="radio" id="html" name="fav_language" value="Male" style="margin: 2px;" required>
+<label for="html" style="margin: 2px;">Male</label><br>
+<input type="radio" id="css" name="fav_language" value="Female"  style="margin: 2px;" required>
+<label for="css" style="margin: 2px;">Female</label><br>
+<button type="submit" style="margin: 5px;size: 10px;" >Submit Query</button>
+</form> --><form id="myForm" action="" method="post" onsubmit="return validateForm()">
+    <span><b>Note : </b>This looks the part but doesnt do anything</span>
+    <p>Name:</p>
+    <input type="text" id="name" name="name" placeholder="Enter your name"><br>
+    <p><label for="message">comments:</label></p>
+  <textarea id="message" name="message" rows="4" cols="50" placeholder="Type your message here..."></textarea>
+    <p>Are you:</p>
+    <input type="radio" id="html" name="selected_gender" value="Male" style="margin: 2px;">
+    <label for="html" style="margin: 2px;">Male</label><br>
+    <input type="radio" id="css" name="selected_gender" value="Female" style="margin: 2px;">
+    <label for="css" style="margin: 2px;">Female</label><br>
+    <button type="submit" style="margin: 5px;size: 10px;">Submit Query</button>
+    <div id="error-message" style="color:red;"></div>
+    <div id="success-message" style="color:green;"></div>
+</form>
+</body>
+</html>
+
+<script>
+function validateForm() {
+    var name = document.getElementById('name').value.trim();
+    var radios = document.getElementsByName('selected_gender');
+    var message = document.getElementById('message').value.trim();
+    var radioChecked = false;
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            radioChecked = true;
+            break;
+        }
+    }
+    var errorMsg = '';
+    if (name === '') {
+        errorMsg += 'Please enter your name.<br>';
+    }
+    if (!radioChecked) {
+        errorMsg += 'Please select your gender.<br>';
+    }
+    if (message === '') {
+        errorMsg += 'Please enter your comments.<br>';
+    }
+    if (errorMsg !== '') {
+        document.getElementById('error-message').innerHTML = errorMsg;
+        return false;
+    }
+    else {
+        document.getElementById('error-message').innerHTML = '';
+        document.getElementById('success-message').innerHTML = 'Form submitted successfully!';
+    }   
+    return true;
+}
+</script>
