@@ -20,13 +20,14 @@ label{
 }
 </style>
 <body>
-    <div class="titleone"> <h1>My First Web Page</h1></div>
+    <div class="titleone"> <h1><i>My first web page</i></h1></div>
     <div class="titleonered"> hiiiiiiiiiiiiiiiiiiiiiiiiiii</div>
-     <div class="titletwo"> <h1> What is this:</h1></p><p></p></div>
-    <p>welcome to <i> my first web page</i>. I created this web page using text editor . little text editor and <b>keen understanding of text html.</b></p>
-    <div class="titletwo"><p><h1> Why is this:</h1></p></div>
+     <div class="titletwo">  <h1 style="margin-left: 10px;">  What is this:</h1></p><p></p></div>
+    <p>welcome to <i> my first web page</i>. I created this web page without the assistance of a web page editor . Just my little text editor and keen <b><i>UNDERSTANDING OF HTML.</b></i></p>
+    <div class="titletwo"><p><h1  style="margin-left: 10px;"> Why is this:</h1></p></div>
     <ul style="color:rgb(241, 85, 85)">
-        <li>To learn HTML</li>
+        <i>
+            <li>To learn HTML</li>
         <li>List Element</li>
         <ol>
             <li>Home</li>
@@ -35,13 +36,14 @@ label{
             <li>About</li>
         </ol>
         <li>Here I have created ordered and unordered list.</li>
+        </i>
     </ul>
-    <div class="titletwo"><p> <h1> ZeusLearning.com</h1></p></div>
-    <P><a href="https://zeuslearning.com" target="_blank">This link will open zeuslearning.com in new tab</a></P>
-    <div class="titletwo"><p> <h1> On the click of the following image navigate to Google.com</h1></p></div><br>
-    <img src="https://storage.googleapis.com/gd-prod/images/f4f4bc5f-904a-4b61-972f-c403bc060679.60c498c559810aa0.webp" alt="google.com" width="400" height="200" onclick="window.location.href='https://www.google.com';" style="cursor: pointer;border-style: dotted;">
+    <div class="titletwo"> <p> <h1 style="margin-left: 10px;">  ZeusLearning.com</h1></p></div>
+    <P><a href="https://zeuslearning.com" target="_blank" style="text-decoration: none;">This link will open zeuslearning.com in new tab</a></P>
+    <div class="titletwo"><p> <h1  style="margin-left: 10px;"> On the click of the following image navigate to Google.com</h1></p></div><br>
+    <img src="https://storage.googleapis.com/gd-prod/images/f4f4bc5f-904a-4b61-972f-c403bc060679.60c498c559810aa0.webp" alt="google.com" width="200" onclick="window.location.href='https://www.google.com';" style="cursor: pointer;border-style: dotted;border-color:rgb(189, 189, 189);">
     <p><h3 style="color: rgb(189, 189, 189);">some random table</h3></p>
-    <table border="1" style="background-color: rgb(189, 189, 189);">
+    <table border="1" style="background-color: rgba(171,171,161,255);">
         
         <tr>
             <td>Row 1, Cell 1</td>
@@ -64,7 +66,7 @@ label{
             <td>Row 4, Cell 3</td>
         </tr>
         </table>
-    <p><h3 style="color: rgb(189, 189, 189);">some random form</h3></p>
+    <p><h3 style="color: rgba(171,171,161,255);">some random form</h3></p>
     <!-- <form action="https://example.com/submit" method="post">
         <span><b>Note : </b>This looks the part but doesnt do anything</span>
             <p>Name:</p>
@@ -77,54 +79,74 @@ label{
 <input type="radio" id="css" name="fav_language" value="Female"  style="margin: 2px;" required>
 <label for="css" style="margin: 2px;">Female</label><br>
 <button type="submit" style="margin: 5px;size: 10px;" >Submit Query</button>
-</form> --><form id="myForm" action="" method="post" onsubmit="return validateForm()">
-    <span><b>Note : </b>This looks the part but doesnt do anything</span>
+</form> -->
+<form id="myForm" action="">
+    <span><b>Note : </b>This looks the part but don't do a anything</span>
     <p>Name:</p>
     <input type="text" id="name" name="name" placeholder="Enter your name"><br>
     <p><label for="message">comments:</label></p>
   <textarea id="message" name="message" rows="4" cols="50" placeholder="Type your message here..."></textarea>
     <p>Are you:</p>
-    <input type="radio" id="html" name="selected_gender" value="Male" style="margin: 2px;">
+    <div style="margin-bottom: 10px;">
+        <input type="radio" id="html" name="selected_gender" value="Male" style="margin: 2px;">
     <label for="html" style="margin: 2px;">Male</label><br>
-    <input type="radio" id="css" name="selected_gender" value="Female" style="margin: 2px;">
+    </div>
+    <div style="margin-bottom: 10px;">
+         <input type="radio" id="css" name="selected_gender" value="Female" style="margin: 2px;">
     <label for="css" style="margin: 2px;">Female</label><br>
-    <button type="submit" style="margin: 5px;size: 10px;">Submit Query</button>
-    <div id="error-message" style="color:red;"></div>
-    <div id="success-message" style="color:green;"></div>
+    </div>
+    <button type="submit" style="margin: 5px;font-size: 15px;">Submit Query</button>
+    <div id="error-message" style="color:red; margin: 10px;"></div>
+    <div id="success-message" style="color:rgba(0,153,0,255);margin: 10px;"></div>
 </form>
 </body>
 </html>
 
 <script>
-function validateForm() {
-    var name = document.getElementById('name').value.trim();
+document.getElementById('myForm').addEventListener('submit', function validateForm(e) {
+    e.preventDefault();
+    var nameInput = document.getElementById('name');
+    var name = nameInput.value.trim();
     var radios = document.getElementsByName('selected_gender');
-    var message = document.getElementById('message').value.trim();
+    var messageInput = document.getElementById('message');
+    var message = messageInput.value.trim();
     var radioChecked = false;
+    var firstInvalid = null;
+
     for (var i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
             radioChecked = true;
             break;
         }
     }
+
     var errorMsg = '';
     if (name === '') {
         errorMsg += 'Please enter your name.<br>';
+        if (!firstInvalid) firstInvalid = nameInput;
     }
     if (!radioChecked) {
         errorMsg += 'Please select your gender.<br>';
+        if (!firstInvalid) firstInvalid = radios[0];
     }
     if (message === '') {
         errorMsg += 'Please enter your comments.<br>';
+        if (!firstInvalid) firstInvalid = messageInput;
     }
     if (errorMsg !== '') {
         document.getElementById('error-message').innerHTML = errorMsg;
+        if (firstInvalid && typeof firstInvalid.scrollIntoView === "function") {
+            firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+            if (firstInvalid.focus) firstInvalid.focus();
+        }
         return false;
-    }
-    else {
+    } else {
         document.getElementById('error-message').innerHTML = '';
         document.getElementById('success-message').innerHTML = 'Form submitted successfully!';
-    }   
+        alert('Form submitted successfully!');
+    }
     return true;
-}
+});
+
 </script>
+<script>
