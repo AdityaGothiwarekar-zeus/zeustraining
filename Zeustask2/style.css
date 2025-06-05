@@ -1,0 +1,89 @@
+body{
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-card {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 1);
+    margin-top: 390px;
+    width: 457px;
+    height: 150px;
+}
+
+.profile-photo {
+    margin-top: 10px;
+    margin-left: 2px;
+    margin-right: 20px;
+     height: 130px;
+    width: 130px;
+    
+}
+
+.profile-photo img {
+    display: block;
+    /* max-width: 120px; */
+    height: 130px;
+    width: 130px;
+}
+
+.profile-details {
+    padding-right: 4px;
+}
+
+.username {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    position: relative;
+    top: 20px;
+}
+
+.address {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    position: relative;
+    top: 14px;
+}
+
+.engagement {
+    color: rgb(159, 158, 158);
+    position: relative;
+    top: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+   
+}
+
+.engagement-item {
+    display: flex;
+    align-items: center;
+}
+
+.icon-comment {
+    transform: scaleX(-1);
+}
+
+.icon-retweet { /* you can style retweet icon here */ }
+
+.icon-heart { /* you can style heart icon here */ }
+
+/* Number styles */
+.count-comment { margin-left: 14px; padding-right: 24px;}
+
+.count-retweet { margin-left: 14px; padding-right: 24px; }
+
+.count-heart { margin-left: 14px;}
+
+.engagement .flipped-icon {
+    padding: 5px;
+    transform: scaleX(-1);
+    padding-left: 0;
+}
+.like-icon {
+    position: relative;
+    padding-left: 20px;
+    padding-right: 14px;
+}

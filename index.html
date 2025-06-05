@@ -22,9 +22,9 @@ label{
 <body>
     <div class="titleone"> <h1><i>My first web page</i></h1></div>
     <div class="titleonered"> hiiiiiiiiiiiiiiiiiiiiiiiiiii</div>
-     <div class="titletwo">  <h1 style="margin-left: 10px;">  What is this:</h1></p><p></p></div>
+     <div class="titletwo">  <h3 style="margin-left: 10px;">  What is this:</h3></p><p></p></div>
     <p>welcome to <i> my first web page</i>. I created this web page without the assistance of a web page editor . Just my little text editor and keen <b><i>UNDERSTANDING OF HTML.</b></i></p>
-    <div class="titletwo"><p><h1  style="margin-left: 10px;"> Why is this:</h1></p></div>
+    <div class="titletwo"><p><h3  style="margin-left: 10px;"> Why is this:</h3></p></div>
     <ul style="color:rgb(241, 85, 85)">
         <i>
             <li>To learn HTML</li>
@@ -38,11 +38,11 @@ label{
         <li>Here I have created ordered and unordered list.</li>
         </i>
     </ul>
-    <div class="titletwo"> <p> <h1 style="margin-left: 10px;">  ZeusLearning.com</h1></p></div>
+    <div class="titletwo"> <p> <h3 style="margin-left: 10px;">  ZeusLearning.com</h3></p></div>
     <P><a href="https://zeuslearning.com" target="_blank" style="text-decoration: none;">This link will open zeuslearning.com in new tab</a></P>
-    <div class="titletwo"><p> <h1  style="margin-left: 10px;"> On the click of the following image navigate to Google.com</h1></p></div><br>
+    <div class="titletwo"><p> <h3  style="margin-left: 10px;"> On the click of the following image navigate to Google.com</h3></p></div><br>
     <img src="https://storage.googleapis.com/gd-prod/images/f4f4bc5f-904a-4b61-972f-c403bc060679.60c498c559810aa0.webp" alt="google.com" width="200" onclick="window.location.href='https://www.google.com';" style="cursor: pointer;border-style: dotted;border-color:rgb(189, 189, 189);">
-    <p><h3 style="color: rgb(189, 189, 189);">some random table</h3></p>
+    <p><h3 class="randomtable">some random table</h3></p>
     <table border="1" style="background-color: rgba(171,171,161,255);">
         
         <tr>
@@ -123,14 +123,18 @@ document.getElementById('myForm').addEventListener('submit', function validateFo
     var errorMsg = '';
     if (name === '') {
         errorMsg += 'Please enter your name.<br>';
+         document.getElementById('name').focus();
         if (!firstInvalid) firstInvalid = nameInput;
+        document.getElementById('success-message').innerHTML = '';
     }
     if (!radioChecked) {
         errorMsg += 'Please select your gender.<br>';
+        document.getElementsByName('selected_gender').focus();
         if (!firstInvalid) firstInvalid = radios[0];
     }
     if (message === '') {
         errorMsg += 'Please enter your comments.<br>';
+        document.getElementById('message').focus();
         if (!firstInvalid) firstInvalid = messageInput;
     }
     if (errorMsg !== '') {

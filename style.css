@@ -23,7 +23,9 @@ body{
 .titletwo{
     background-color: rgba(0,153,0,255);
     color: white;
-    padding: 0.1px;
     margin: 0.2px;
-    font-size: 10px;
+    
+}
+.randomtable{
+color: rgb(189, 189, 189);
 }
