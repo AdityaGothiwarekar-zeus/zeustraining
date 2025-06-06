@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="assets/icons/logo used in header.svg" alt="Logo" />
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="login-container">
+        <h2>Log in with Quantum</h2>
+        <form>
+          <!-- Custom SVG Radio Buttons -->
+        <div class="radio-buttons">
+  <label class="custom-radio">
+    <input type="radio" name="schoolType" value="district" onchange="updateRadios()" />
+    <img src="assets/icons/radio-unchecked.svg" alt="Unchecked" class="radio-icon" />
+    District
+  </label>
+  <label class="custom-radio">
+    <input type="radio" name="schoolType" value="independent" onchange="updateRadios()" />
+    <img src="assets/icons/radio-unchecked.svg" alt="Unchecked" class="radio-icon" />
+    Independent School
+  </label>
+</div>
+
+
+          <div class="form-group">
+            <label for="state">State*</label>
+            <select id="state" name="state">
+              <option value="">Alabama</option>
+              <!-- Add more states -->
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="district">District*</label>
+            <select id="district" name="district">
+              <option value="">Alabama School District</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="username" name="username" placeholder="Username/Email ID" />
+            <a href="#" class="forgot-link">Forgot Username?</a>
+          </div>
+
+          <div class="form-group password-group">
+            <div class="password-wrapper">
+              <input type="password" id="password" name="password" placeholder="Password*" />
+              <span class="toggle-password" onclick="togglePassword()">
+                <img src="assets/icons/preview.svg" alt="Show Password" width="20" height="20" />
+              </span>
+            </div>
+            <a href="#" class="forgot-link">Forgot Password?</a>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label" for="remember">
+              <input type="checkbox" id="remember" name="remember" />
+              <span>Remember me</span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn">LOG IN</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript to toggle radio SVGs -->
+  <script>
+   function updateRadios() {
+    const radios = document.querySelectorAll('input[name="schoolType"]');
+    radios.forEach(radio => {
+      const icon = radio.nextElementSibling; // the img
+      if (radio.checked) {
+        icon.src = 'assets/icons/radio-button-on.svg';
+      } else {
+        icon.src = 'assets/icons/radio-button-off.svg';
+      }
+    });
+  }
+
+  // Initialize icons on page load
+  window.addEventListener('DOMContentLoaded', updateRadios);
+
+    function togglePassword() {
+      const passwordInput = document.getElementById("password");
+      passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    }
+  </script>
+</body>
+</html>

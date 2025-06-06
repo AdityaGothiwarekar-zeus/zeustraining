@@ -1,0 +1,236 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/assets/Quicksand font 1/Quicksand-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MyCustomFontmedium';
+  src: url('/assets/Quicksand font 1/static/Quicksand-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  font-family: 'MyCustomFont', Arial, sans-serif;
+}
+
+body{
+    background-color: #c9c8c8;
+}
+.container{
+    justify-content: center;
+    align-items: center;
+}
+.header{
+     background-image: url('assets/header pattern svg.svg');
+      background-color: #232f3d; 
+      opacity: 1;
+      border-bottom: 5px solid #88c6db;
+}
+.logo{
+    padding: 10px;
+    margin-left: 10px;
+}
+    .login-container {
+        font-family: "MyCustomFont";
+      background-color: #fff;
+      padding: 3px 25px;
+      border-radius: 5px;
+      border-top: 5px solid rgba(80,199,229,255);
+      width: 488px;
+      height: 620px;
+      /* margin-left: 80vh;
+      margin-top: 8vh */
+    }
+    .content{
+         margin-top: 50px; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .login-container h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+.form-group {
+  margin-bottom: 25px; /* increased from 15px */
+  margin-left: 30px;
+}
+
+
+    .form-group label {
+      font-family: "MyCustomFont";
+      font-size: 12px;
+      display: block;
+      margin-bottom: 5px;
+      color: #666666;
+    }
+    .form-group input {
+  font-family: "MyCustomFont";
+  width: 424px;
+  padding: 10px 5px;             /* reduced vertical padding */
+  border: 0px;
+  border-bottom: 2px solid #ccc;
+  text-align: left;
+  font-size: 16px;
+  box-sizing: border-box;       /* ensures padding doesn’t overflow width */
+}
+.form-group select {
+  font-size: 16px;
+  width: 424px;
+  font-family: "MyCustomFontmedium";
+  padding: 8px 5px;               /* reduced vertical padding */
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  box-sizing: border-box;        /* keeps padding inside width */
+  background-color: #fff;        /* ensures white bg in some browsers */
+  appearance: none;              /* removes default dropdown styling (optional) */
+  background-image: url('/assets/icons/arrow-down.svg');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+}
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+    }
+    .checkbox input {
+      margin-right: 5px;
+    }
+    .btn {
+      margin-left: 20%;
+      font-family: "MyCustomFontmedium";
+      font-size: 14px;
+      width: 215.51px;
+      height: 40px;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #3FD28B;
+      color: #1F2834;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0px 3px 5px #0000003D;
+    }
+    .btn:hover {
+      background-color: #218838;
+    }
+    .links {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+    .links a {
+      text-decoration: none;
+      color: #007bff;
+    }
+
+.forgot-link {
+  display: block;
+  font-size: 0.85em;
+  color: #1F7A54;
+  text-decoration: none;
+  font-family: "MyCustomFont";
+  text-transform: uppercase;
+  text-align: right;
+  width: 424px;             /* Match input width exactly */
+  margin-top: 5px;
+  margin-left: 2px;        /* Align with input's left edge */
+}
+
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+.radio-buttons{
+     padding-right: 20px;
+     padding-left: 30px;
+     padding-bottom: 20px;
+     padding-top: 20px;
+}
+.toggle-password {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+  width: 22px;
+  height: 15px;
+}
+
+.password-wrapper {
+  position: relative;
+  width: 424px;
+}
+.password-wrapper input {
+  padding-right: 35px; /* Add space so text doesn't go under the icon */
+}
+.checkbox-group {
+  margin-left: 30px;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* space between checkbox and text */
+  font-family: "MyCustomFont";
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin: 0;
+  accent-color: #1F7A54; /* optional: for modern browsers to color checkbox */
+}
+.checkbox-group {
+  margin-left: 30px;
+  margin-top: -10px; /* optional: adjust spacing above checkbox */
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "MyCustomFont";
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin: 0;
+  accent-color: #1F7A54; /* optional for modern browser styling */
+}
+ .radio-buttons {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+  /* Hide native radio inputs */
+  .radio-buttons input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .custom-radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+  }
+  .radio-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    transition: transform 0.2s ease;
+  }
+  .custom-radio:hover .radio-icon {
+    transform: scale(1.1);
+  }
