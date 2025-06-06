@@ -1,0 +1,86 @@
+ body {
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1.5fr 2fr 2fr;
+      grid-template-rows: auto 1fr 1fr auto;
+      gap: 2px;
+      height: 100vh;
+      padding: 10px;
+      box-sizing: border-box;
+      font-weight: 600;
+    }
+
+    header {
+      grid-column: 1 / -1;
+      background-color: rgba(133,112,224,255);
+      color: white;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      border: black 1px solid;
+       font-style: bold;
+    }
+
+    .sidebar {
+      grid-row: 2 / 4;
+      background: linear-gradient(to top, #29a59e, #3aded6);
+      padding: 20px;
+      color: white;
+      border: black 1px solid;
+      display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+       font-style: bold;
+       line-height: 1600%;
+    }
+
+    .content1 {
+      grid-column: 2 / 4;
+      background: linear-gradient(to bottom right, #6855e2, rgba(55,142,241,1), #3be2e7);
+      padding: 20px;
+      color: white;
+      border: black 1px solid;
+      display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+      line-height: 100px;
+       font-style: bold;
+    }
+
+    .content2 {
+       background: linear-gradient(to bottom right, #6855e2, rgba(55,142,241,1), #3be2e7);
+      padding: 20px;
+      color: white;
+      border: black 1px solid;
+      display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+      line-height: 100px;
+       font-style: bold;
+    }
+
+    .content3 {
+       background: linear-gradient(to bottom right, #6855e2, rgba(55,142,241,1), #3be2e7);
+      padding: 20px;
+      color: white;
+      border: black 1px solid;
+      line-height: 100px;
+      display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+       font-style: bold;
+    }
+
+    footer {
+      grid-column: 1 / -1;
+      background-color: rgba(133,112,224,255);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      border: black 1px solid;
+       font-style: bold;
+    }
