@@ -16,28 +16,31 @@
 
     <div class="content">
       <div class="login-container">
-        <h2>Log in with Quantum</h2>
+        <div class="login-header">
+          <img src="assets\icons\back.svg" alt="Back" class="back-arrow" />
+          <h2>Log in with Quantum</h2>
+        </div>
+        
         <form>
           <!-- Custom SVG Radio Buttons -->
-        <div class="radio-buttons">
-  <label class="custom-radio">
-    <input type="radio" name="schoolType" value="district" onchange="updateRadios()" />
-    <img src="assets/icons/radio-unchecked.svg" alt="Unchecked" class="radio-icon" />
-    District
-  </label>
-  <label class="custom-radio">
-    <input type="radio" name="schoolType" value="independent" onchange="updateRadios()" />
-    <img src="assets/icons/radio-unchecked.svg" alt="Unchecked" class="radio-icon" />
-    Independent School
-  </label>
-</div>
-
+          <div class="radio-buttons">
+            <label class="custom-radio">
+              <input type="radio" name="schoolType" value="district" onchange="updateRadios()" checked />
+              <img src="assets/icons/radio-button-on.svg" alt="Checked" class="radio-icon" />
+              District
+            </label>
+            <label class="custom-radio">
+              <input type="radio" name="schoolType" value="independent" onchange="updateRadios()" />
+              <img src="assets/icons/radio-button-off.svg" alt="Unchecked" class="radio-icon" />
+              Independent School
+            </label>
+          </div>
 
           <div class="form-group">
             <label for="state">State*</label>
             <select id="state" name="state">
               <option value="">Alabama</option>
-              <!-- Add more states -->
+              <!-- Add more states if needed -->
             </select>
           </div>
 
@@ -45,30 +48,34 @@
             <label for="district">District*</label>
             <select id="district" name="district">
               <option value="">Alabama School District</option>
+              <!-- Add more districts if needed -->
             </select>
           </div>
 
-          <div class="form-group">
-            <input type="text" id="username" name="username" placeholder="Username/Email ID" />
-            <a href="#" class="forgot-link">Forgot Username?</a>
+          <div class="form-group username-group" style="margin-top: 10px;">
+            <input type="text" id="username" name="username" placeholder="Username/Email ID*" />
+            <a href="#" class="forgot-link">FORGOT USERNAME?</a>
           </div>
 
           <div class="form-group password-group">
             <div class="password-wrapper">
               <input type="password" id="password" name="password" placeholder="Password*" />
-              <span class="toggle-password" onclick="togglePassword()">
+              <span class="toggle-password" onclick="togglePassword(this)">
                 <img src="assets/icons/preview.svg" alt="Show Password" width="20" height="20" />
               </span>
             </div>
-            <a href="#" class="forgot-link">Forgot Password?</a>
+            <a href="#" class="forgot-link">FORGOT PASSWORD?</a>
           </div>
 
           <div class="form-group checkbox-group">
-            <label class="checkbox-label" for="remember">
-              <input type="checkbox" id="remember" name="remember" />
-              <span>Remember me</span>
+            <label class="checkbox-label custom-checkbox">
+              <input type="checkbox" id="remember" name="remember" onchange="updateCheckbox()" />
+              <img src="assets/icons/checkbox-unchecked.svg" alt="Unchecked" class="checkbox-icon" />
+              <span>Remember Me</span>
             </label>
           </div>
+          
+          
 
           <div class="form-group">
             <button type="submit" class="btn">LOG IN</button>
@@ -78,27 +85,61 @@
     </div>
   </div>
 
-  <!-- JavaScript to toggle radio SVGs -->
+  <!-- About / Contact Links - OUTSIDE the login container -->
+  <div class="footer-links">
+    <a href="#">About</a> | <a href="#">Contact Us</a>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <img src="assets/icons/logo used in footer.svg" alt="Quantum Logo" class="footer-logo" />
+      <p class="footer-text">Copyright © 2020–2021</p>
+    <p class="footer-text company-name"><strong>Zeus Systems Pvt. Ltd.</strong></p>
+    <p class="footer-text">All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
   <script>
-   function updateRadios() {
-    const radios = document.querySelectorAll('input[name="schoolType"]');
-    radios.forEach(radio => {
-      const icon = radio.nextElementSibling; // the img
-      if (radio.checked) {
-        icon.src = 'assets/icons/radio-button-on.svg';
-      } else {
-        icon.src = 'assets/icons/radio-button-off.svg';
-      }
-    });
-  }
-
-  // Initialize icons on page load
-  window.addEventListener('DOMContentLoaded', updateRadios);
-
-    function togglePassword() {
-      const passwordInput = document.getElementById("password");
-      passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    function updateRadios() {
+      const radios = document.querySelectorAll('input[name="schoolType"]');
+      radios.forEach(radio => {
+        const icon = radio.nextElementSibling;
+        if (radio.checked) {
+          icon.src = 'assets/icons/radio-button-on.svg';
+        } else {
+          icon.src = 'assets/icons/radio-button-off.svg';
+        }
+      });
     }
+    function updateCheckbox() {
+  const checkbox = document.getElementById("remember");
+  const icon = checkbox.nextElementSibling;
+  if (checkbox.checked) {
+    icon.src = "assets/icons/checkbox-checked.svg";
+  } else {
+    icon.src = "assets/icons/checkbox-unchecked.svg";
+  }
+}
+
+
+    function togglePassword(elem) {
+      const passwordInput = document.getElementById("password");
+      const icon = elem.querySelector('img');
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        icon.src = "assets/icons/hide.svg"; // Use your hide icon
+      } else {
+        passwordInput.type = "password";
+        icon.src = "assets/icons/preview.svg";
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+  updateRadios();
+  updateCheckbox();
+});
+
   </script>
 </body>
 </html>
