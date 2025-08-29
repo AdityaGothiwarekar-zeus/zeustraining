@@ -1,0 +1,144 @@
+@import "../../../../../global.scss";
+
+.stepper-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  
+  .stepper-operator {
+    font-family: "Boogaloo", cursive;
+    font-size: 48px;
+    color:  white;
+    font-weight: bold;
+  }
+}
+
+.stepper-container {
+  display: inline-flex;
+  transform: translateZ(1px);
+
+  button.increase, button.decrease {
+    img {
+      width: 24px;
+    }
+  }
+
+  button.increase {
+    // background-image: url(../../../media/assets/icons/stepper_button_default_up_ns.svg);
+    background-image: url(../../../stages/stage4/media/assets/icons/stepper_button_default_up_ns.svg);
+    width: 80px;
+    height: 50px;
+    transform: translate(-1.4px, 1.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      margin-top: 6px;
+    }
+
+    &:disabled {
+      background-image: url(../../../stages/stage4/media/assets/icons/stepper_disabledpatch_up.svg),
+        url(../../../stages/stage4/media/assets/icons/stepper_button_default_up_ns.svg);
+
+      img {
+        opacity: 0.4;
+      }
+    }
+
+    &::before {
+      top: -12px;
+      rotate: 225deg !important;
+    }
+
+    &::after {
+      left: 50%;
+      top: -45px;
+    }
+
+    &:not(:disabled):hover, &:not(:disabled):focus-visible {
+      @include tooltipOnFocus;
+    }
+
+    &:not(:disabled):hover {
+      background-image: url(../../../stages/stage4/media/assets/icons/stepper_up_hover_patch.svg),
+        url(../../../stages/stage4/media/assets/icons/stepper_button_default_up_ns.svg);
+    }
+
+    &:not(:disabled):active {
+      background-image: url(../../../stages/stage4/media/assets/icons/stepper_up_active_patch.svg),
+        url(../../../stages/stage4/media/assets/icons/stepper_button_default_up_ns.svg);
+    }
+  }
+
+  .decrease {
+    background-image: url(../../../stages/stage4/media/assets/icons/stepper_button_default_down_ns.svg);
+    width: 80px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.6));
+
+    &::before {
+      bottom: -13px;
+    }
+
+    &::after {
+      bottom: -46px;
+      left: 50%;
+    }
+
+    img {
+      margin-bottom: 6px;
+      rotate: 180deg;
+    }
+
+    &:disabled {
+      background-image: url(../../../stages/stage4/media/assets/icons/stepper_disabledpatch_down.svg),
+        url(../../../stages/stage4/media/assets/icons/stepper_button_default_down_ns.svg);
+      filter: none;
+
+      img {
+        opacity: 0.4;
+      }
+    }
+
+    &:not(:disabled):hover, &:not(:disabled):focus-visible {
+      @include tooltipOnFocus;
+    }
+
+    &:not(:disabled):hover {
+      background-image: url(../../../stages/stage4/media/assets/icons/stepper_down_hover_patch.svg),
+        url(../../../stages/stage4/media/assets/icons/stepper_button_default_down_ns.svg);
+    }
+
+    &:not(:disabled):active {
+      background-image: url(../../../stages/stage4/media/assets/icons/stepper_down_active_patch.svg),
+        url(../../../stages/stage4/media/assets/icons/stepper_button_default_down_ns.svg);
+    }
+  }
+
+  .stepper-input {
+    transform: translate(2.9px, 1px);
+    width: 73px;
+    box-sizing: border-box;
+    font-family: "Boogaloo", cursive;
+    color: #5a1f33;
+    padding: 0;
+    height: 80px;
+    background-color: #ffffff;
+    border: 2px solid #5a1f33;
+    font-size: 48px;
+    text-align: center;
+
+    &:disabled {
+      background-color: rgba(255, 255, 255, 0.4);
+      cursor: not-allowed;
+    }
+
+    &.highlighted {
+      background-color: yellow;
+    }
+  }
+}
